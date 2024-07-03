@@ -27,4 +27,4 @@ def step_impl(context):
 @then("Click on login button")
 def step_impl(context):
     context.driver.find_element(By.NAME, "login").click()
-    time.sleep(2)
+    time.sleep(5)
