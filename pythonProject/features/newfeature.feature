@@ -1,6 +1,11 @@
-Feature: Validate Google
+Feature: Facebook Login
 
-  Scenario: Validate the searchbox
-    Given user hits URL
-    When user inputs the text
-    Then click on search
+  Scenario Outline: Login to Facebook with valid credentials
+    Given User opens facebook login page
+    When I enter username "<username>" and password "<password>"
+    Then Click on login button
+
+    Examples:
+      | username          | password     |
+      | user1             | password123  |
+      | user2             | password456  |

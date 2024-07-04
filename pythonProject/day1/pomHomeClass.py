@@ -10,7 +10,6 @@ class Login_Page:
         self.passwordLoc = (By.ID, 'pass')
         self.login_buttonLoc = (By.NAME, 'login')
 
-
     def enter_username(self, userText):
         userName = WebDriverWait(self.driver, 100).until(EC.presence_of_element_located(self.usernameLoc))
         userName.send_keys(userText)
@@ -22,5 +21,3 @@ class Login_Page:
     def login(self):
         btn_Login = WebDriverWait(self.driver, 100).until(EC.element_to_be_clickable(self.login_buttonLoc))
         btn_Login.click()
-
-
