@@ -9,3 +9,4 @@ Feature: Facebook Login
       | username          | password     |
       | user1             | password123  |
       | user2             | password456  |
+      | user3             | password23   |
