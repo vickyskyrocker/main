@@ -21,16 +21,22 @@ jobs:
       with:
         python-version: 3.x
 
+    - name: Install Chrome browser
+      run: |
+        sudo apt-get update
+        sudo apt-get install google-chrome-stable
+
+    - name: Install ChromeDriver
+      run: |
+        LATEST_CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
+        wget -q --continue -P /tmp "https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
+        sudo unzip -o /tmp/chromedriver_linux64.zip -d /usr/local/bin
+
     - name: Install dependencies
       run: |
         python -m venv venv
         source venv/bin/activate
         pip install -r requirements.txt
-
-    - name: Run day5BrowserNavigation script
-      run: |
-        source venv/bin/activate
-        python pythonProject/day1/day5BrowserNavigation.py
 
     - name: Run tests
       run: |
