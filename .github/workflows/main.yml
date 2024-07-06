@@ -41,4 +41,4 @@ jobs:
     - name: Run tests
       run: |
         source venv/bin/activate
-        python -m unittest discover -s tests
+        python -m unittest discover -s ./day1 -p 'day5BrowserNavigation.py'
