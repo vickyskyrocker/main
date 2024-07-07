@@ -24,7 +24,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m venv venv
-        venv/bin/pip install -r pythonProject/requirements.txt
+        venv/bin/pip install -r requirements.txt
         venv/bin/pip install pytest  # Install pytest
 
     - name: Run tests
