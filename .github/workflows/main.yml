@@ -21,15 +21,24 @@ jobs:
       with:
         python-version: 3.9
 
+    - name: Install Chrome browser
+      run: |
+        sudo apt-get update
+        sudo apt-get install google-chrome-stable
+
+    - name: Install ChromeDriver
+      run: |
+        LATEST_CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
+        wget -q --continue -P /tmp "https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
+        sudo unzip -o /tmp/chromedriver_linux64.zip -d /usr/local/bin
+
     - name: Install dependencies
       run: |
         python -m venv venv
-        venv/bin/pip install -r requirements.txt
-        venv/bin/pip install pytest  # Install pytest
-    
-    - name: Set up Chrome and ChromeDriver
-      uses: SeleniumHQ/setup-selenium@v2
+        source venv/bin/activate
+        pip install -r requirements.txt
 
     - name: Run tests
       run: |
-        venv/bin/pytest pythonProject/day1  # Adjust the path as needed
+        source venv/bin/activate
+        python -m unittest discover -s ./day1 -p 'test_day5BrowserNavigation.py'
