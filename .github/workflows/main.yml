@@ -27,18 +27,8 @@ jobs:
         venv/bin/pip install -r requirements.txt
         venv/bin/pip install pytest  # Install pytest
     
-    - name: Install Chrome and ChromeDriver
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y wget unzip
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get -fy install
-        CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
-        wget -N https://chromedriver.storage.googleapis.com/$CHROME_VERSION/chromedriver_linux64.zip
-        unzip chromedriver_linux64.zip
-        sudo mv -f chromedriver /usr/local/bin/chromedriver
-        sudo chown root:root /usr/local/bin/chromedriver
-        sudo chmod 0755 /usr/local/bin/chromedriver
+    - name: Set up Chrome and ChromeDriver
+      uses: SeleniumHQ/setup-selenium@v2
 
     - name: Run tests
       run: |
