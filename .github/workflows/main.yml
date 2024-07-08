@@ -19,7 +19,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.x
+        python-version: 3.9
 
     - name: Install Chrome browser
       run: |
@@ -28,9 +28,11 @@ jobs:
 
     - name: Install ChromeDriver
       run: |
-        LATEST_CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
-        wget -q --continue -P /tmp "https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
-        sudo unzip -o /tmp/chromedriver_linux64.zip -d /usr/local/bin
+        LATEST_CHROMEDRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)
+        wget https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_linux64.zip
+        unzip chromedriver_linux64.zip
+        sudo mv chromedriver /usr/local/bin/
+        sudo chmod +x /usr/local/bin/chromedriver
 
     - name: Install dependencies
       run: |
@@ -41,4 +43,4 @@ jobs:
     - name: Run tests
       run: |
         source venv/bin/activate
-        python -m unittest discover -s ./day1 -p 'day5BrowserNavigation.py'
+        python -m unittest discover -s pythonProject/day1 -p 'test_day5BrowserNavigation.py'
