@@ -17,7 +17,7 @@ wait.until(EC.presence_of_element_located((By.XPATH, "//h1")))
 dropdown = Select(driver.find_element(By.ID, "oldSelectMenu"))
 dropdown.select_by_visible_text("green")
 time.sleep(5)
-print("yellow is clicked and printed")
+print("green is clicked and printed")
 
 
 
