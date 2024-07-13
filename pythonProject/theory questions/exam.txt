@@ -1,0 +1,72 @@
+Questions:
+2-marks:
+1) What is Selenium?
+selenium is a web application automation framework.
+it has more tools and libraries to automate application
+
+2) Command to install selenium.
+pip install selenium
+3) What are the locators in Selenium?
+ID,name,classname,xpath,linked text,partially linked text,css selector
+4) What is the difference between find_element_by_* and find_elements_by_* in Selenium?
+find _element_by-*..... is used to find out the only single element by the locator
+ but ,find_element_by_* is used to find out the multiple element
+5) How do you manage browser windows in Selenium?
+driver.WindowHandles()
+driver.currentWindowHandle()
+switch_to()
+switch_to.(driver.window_handles(index))
+
+6) What are the frameworks used in selenium. Explain
+pytest-pytest specially  has @pytest.fixture using this we reduce the duplication of code
+ ------here we have @pytest.mark.order()using this we can customize our test funcs
+ @pytest.mark.parameterization()---multiple run test---used for data driven test so we pass the different data
+ depending on that test will run multiple tie
+unittest-mostly used by development team
+testproject-
+robot-key driven development framework....
+maintainability,clarity,scalability,reporting these are the mager advantage in this
+
+behave(bdd)-collaboration is the best thing here..
+because of this we can collaborate with development team,QA and
+**Business partner(non technical person)...
+maintainability,clarity,simple language,gherkin keyword,collaboration are main advantage
+7) What is selenium Grid and how does it work?
+selenium grid is used for  handle different browser in same time...
+8) How do you initialize web driver in selenium?
+By using service object
+driver=webdriver.Chrome(service=Service(ChromeWebdriverManger().install())
+9) How do you find a element in selenium?
+navigating with driver
+10) How do you handle AJAX calls in selenium.?
+DON"T KNOW SORRY
+
+10 marks:
+1) a> Use xpath and automate the below:
+    a.1> Go to amazon --> click on search box --> type iphone --> find the element in the result.
+    a.2> Go to https://the-internet.herokuapp.com/nested_frames --> identify xpath for all the frames and validate the text
+   b> Explain the git commands:
+    b.1> Git status:
+    it is used for update the changes in that particular repository
+    b.2> Diff b/w Git Pull and Git pull origin
+    git pull used to fetch the files when we have only one branch
+    git pull origin  is also used to fetch the files when we have more than one branch
+     (git pull origin branch name)
+    c.3> Git branch
+    git branch is used to know the in which branch we are currently working
+    d.4> Git log
+    git log used for history of the project
+    e.5> Git stash
+    used to save working project temporarily
+2) Test the facebook login functionality. Cover all the scenarios.
+Use appropriate framework to achieve this.
+3) Go to https://www.orange.com/en --> handle cookies --> click on magazines -->
+click on ornage bussiness --> validate the title of the new window -->
+go back to prev window and close the browser.
+4) Book a bus ticket in redbus.go till payment page.
+5) Go to demo.guru99.com--> enter mail id--> retrieve the username and password -->
+click on bank project --> enter username and password -->click on new customer -->
+enter the details and click on save.
+6) Write the code for cross browser testing -- (Use URl of your own choice)
+7) Write a code for headless mode. generate the report --> (Use URl of your own choice)
+8) Write a code and automate exception handling --> (Use URl of your own choice)
