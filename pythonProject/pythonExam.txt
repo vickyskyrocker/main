@@ -22,9 +22,12 @@ Questions:
 1) a> Use xpath and automate the below:
     a.1> Go to amazon --> click on search box --> type iphone --> find the element in the result.
     a.2> Go to https://the-internet.herokuapp.com/nested_frames --> identify xpath for all the frames and validate the text
-   b> Use CSS selector and automate the below:
-    b.1> go to amazon --> identify the css selecor for womens clothing.
-    b.2> go to amazon --> scroll down to Amazon app download --> click on google play button.
+   b> Explain the git commands:
+    b.1> Git status
+    b.2> Diff b/w Git Pull and Git pull origin
+    c.3> Git branch
+    d.4> Git log
+    e.5> Git stash
 2) Test the facebook login functionality. Cover all the scenarios. Use appropriate framework to achieve this.
 3) Go to https://www.orange.com/en --> handle cookies --> click on magazines --> click on ornage bussiness --> validate the title of the new window --> go back to prev window and close the browser.
 4) Book a bus ticket in redbus. go till payment page.
