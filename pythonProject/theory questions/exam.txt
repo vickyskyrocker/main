@@ -10,7 +10,7 @@ pip install selenium
 ID,name,classname,xpath,linked text,partially linked text,css selector
 4) What is the difference between find_element_by_* and find_elements_by_* in Selenium?
 find _element_by-*..... is used to find out the only single element by the locator
- but ,find_element_by_* is used to find out the multiple element
+ but ,find_elements_by_* is used to find out the multiple element
 5) How do you manage browser windows in Selenium?
 driver.WindowHandles()
 driver.currentWindowHandle()
